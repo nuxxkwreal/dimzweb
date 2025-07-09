@@ -2,71 +2,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontak Bisnis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PANEL PTETODACTYL BY NUXMARKET</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f0ff;
-      color: #003366;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      color: #333;
     }
-    header {
-      background-color: #0055cc;
-      color: white;
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .logo-side {
+      flex: 1;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
-      text-align: center;
     }
-    main {
-      padding: 30px;
-      text-align: center;
-    }
-    .kontak {
-      margin: 20px 0;
-    }
-    .whatsapp-btn {
-      background-color: #25D366;
-      color: white;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      position: fixed;
+    .logo-side img {
       width: 100%;
-      bottom: 0;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .content-side {
+      flex: 2;
+      padding: 40px;
+      text-align: left;
+    }
+    .content-side h1 {
+      color: #1a237e;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .content-side p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    .wa-button {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 15px 25px;
+      margin: 10px 10px 0 0;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    .wa-button:hover {
+      background: #128C7E;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .logo-side, .content-side {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Kontak Bisnis Kami</h1>
-  </header>
-
-  <main>
-    <div class="kontak">
-      <p>Silakan hubungi kami untuk informasi lebih lanjut:</p>
-      <p>Email: kontak@bisnisku.com</p>
-      <p>Telepon: 0856-5703-1392</p>
+  <div class="container">
+    <div class="logo-side">
+      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo Nuxmarket" />
     </div>
-    <a class="whatsapp-btn" href="https://wa.me/6285657031392" target="_blank">
-      Hubungi via WhatsApp
-    </a>
-  </main>
+    <div class="content-side">
+      <h1>PANEL PTETODACTYL BY NUXMARKET</h1>
+      <p>
+HARGA MURAH GARANSI 1 BULAN
+JIKA EROR BISA CLAIM GARANSI DENGAN MEMBAWA BUKTI PEMBELIAN SEBELUMNYA.
+SERVER LANCAR
+ANTI MALING SC
 
-  <footer>
-    &copy; 2025 Bisnisku. Semua Hak Dilindungi.
-  </footer>
-
+DAN SAYA JUAL ALL LOGO JB MURAH
+BISA REQUEST SEMAU KALIAN
+LOGO DI JAMIN HD DAN KEREN
+      </p>
+      <div class="buttons">
+        <a href="https://wa.me/6285657031392" class="wa-button" target="_blank">
+          Chat WA 1 (6285657031392)
+        </a>
+        <a href="https://wa.me/6285166541436" class="wa-button" target="_blank">
+          Chat WA 2 (6285166541436)
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
