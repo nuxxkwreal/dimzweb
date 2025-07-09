@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PANEL PTETODACTYL BY NUXMARKET</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .logo-side {
+      flex: 1;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .logo-side img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .content-side {
+      flex: 2;
+      padding: 40px;
+      text-align: left;
+    }
+    .content-side h1 {
+      color: #1a237e;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .content-side p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    .wa-button {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 15px 25px;
+      margin: 10px 10px 0 0;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    .wa-button:hover {
+      background: #128C7E;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .logo-side, .content-side {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-side">
+      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo Nuxmarket" />
+    </div>
+    <div class="content-side">
+      <h1>PANEL PTETODACTYL BY NUXMARKET</h1>
+      <p>
+HARGA MURAH GARANSI 1 BULAN
+JIKA EROR BISA CLAIM GARANSI DENGAN MEMBAWA BUKTI PEMBELIAN SEBELUMNYA.
+SERVER LANCAR
+ANTI MALING SC
+
+DAN SAYA JUAL ALL LOGO JB MURAH
+BISA REQUEST SEMAU KALIAN
+LOGO DI JAMIN HD DAN KEREN
+      </p>
+      <div class="buttons">
+        <a href="https://wa.me/6285657031392" class="wa-button" target="_blank">
+          Chat WA 1 (6285657031392)
+        </a>
+        <a href="https://wa.me/6285166541436" class="wa-button" target="_blank">
+          Chat WA 2 (6285166541436)
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
