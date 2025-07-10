@@ -1,264 +1,114 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NUXMARKET - Panel Bot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>PANEL PTETODACTYL BY NUXMARKET</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-      background: #0f172a;
-    }
-    .video-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #bgVideo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.4;
-    }
-    section {
-      display: none;
-      padding: 40px 20px;
-      min-height: 100vh;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
-    }
-    section.active {
-      display: block;
-      animation: fadeIn 0.8s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    header {
-      text-align: center;
-    }
-    header img {
-      height: 220px;
-      border-radius: 16px;
-      margin-bottom: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-    header img:hover {
-      transform: scale(1.05);
-    }
-    .main-text {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 28px;
-      color: #ffffff;
-      font-weight: 700;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #showPanelBtn {
-      margin-top: 30px;
-      padding: 14px 32px;
-      font-weight: 700;
-      font-size: 20px;
-      color: #fff;
-      background: linear-gradient(90deg, #3b82f6, #06b6d4);
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      overflow: hidden;
-      position: relative;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-    #showPanelBtn span {
-      position: relative;
-      animation: floatText 2s ease-in-out infinite;
-      display: inline-block;
-    }
-    #showPanelBtn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-    @keyframes floatText {
-      0% { transform: translateY(0);}
-      50% { transform: translateY(-5px);}
-      100% { transform: translateY(0);}
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      color: #333;
     }
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .product {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
       border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .logo-side {
+      flex: 1;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
     }
-    .product:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.15);
+    .logo-side img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
     }
-    .product h2 {
-      margin-bottom: 12px;
-      color: #60a5fa;
+    .content-side {
+      flex: 2;
+      padding: 40px;
+      text-align: left;
     }
-    .wa-link {
+    .content-side h1 {
+      color: #1a237e;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .content-side p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    .wa-button {
       display: inline-block;
       background: #25D366;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 15px 25px;
+      margin: 10px 10px 0 0;
       text-decoration: none;
-      font-weight: 600;
-      border: none;
-      transition: all 0.3s ease;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
     }
-    .wa-link img {
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 8px;
+    .wa-button:hover {
+      background: #128C7E;
     }
-    .wa-link:hover {
-      background-color: #1ebe57;
-      transform: scale(1.05);
-    }
-    .payment-section {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-    .payment-images img {
-      height: 80px;
-      margin: 10px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-    .payment-images img:hover {
-      transform: scale(1.1);
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .logo-side, .content-side {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="video-wrapper">
-    <video autoplay muted loop id="bgVideo">
-      <source src="https://files.catbox.moe/ajsfpa.mp4" type="video/mp4">
-    </video>
-  </div>
+  <div class="container">
+    <div class="logo-side">
+      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo Nuxmarket" />
+    </div>
+    <div class="content-side">
+      <h1>PANEL PTETODACTYL BY NUXMARKET</h1>
+      <p>
+HARGA MURAH GARANSI 1 BULAN
+JIKA EROR BISA CLAIM GARANSI DENGAN MEMBAWA BUKTI PEMBELIAN SEBELUMNYA.
+SERVER LANCAR
+ANTI MALING SC
 
-  <!-- SECTION 1 - TAMPILAN UTAMA -->
-  <section id="section1" class="active">
-    <header>
-      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo NUXMARKET">
-      <p class="main-text">
-        Pilih Panel Bot sesuai kebutuhan RAM kamu dan langsung chat admin via WhatsApp untuk tanya harga dan membeli jika minat dijamin murah aman dan terpercaya.
+DAN SAYA JUAL ALL LOGO JB MURAH
+BISA REQUEST SEMAU KALIAN
+LOGO DI JAMIN HD DAN KEREN
       </p>
-      <button id="showPanelBtn"><span>KLIK DISINI UNTUK MELIHAT PANEL📦</span></button>
-    </header>
-  </section>
-
-  <!-- SECTION 2 - MENU PANEL -->
-  <section id="section2">
-    <div class="container">
-
-      <div class="product">
-        <h2>Panel Bot RAM 1GB</h2>
-        <a class="wa-link" data-ram="1GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
+      <div class="buttons">
+        <a href="https://wa.me/6285657031392" class="wa-button" target="_blank">
+          Chat WA 1 (6285657031392)
         </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 2GB</h2>
-        <a class="wa-link" data-ram="2GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
+        <a href="https://wa.me/6285166541436" class="wa-button" target="_blank">
+          Chat WA 2 (6285166541436)
         </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 3GB</h2>
-        <a class="wa-link" data-ram="3GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 4GB</h2>
-        <a class="wa-link" data-ram="4GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 5GB</h2>
-        <a class="wa-link" data-ram="5GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM Unlimited</h2>
-        <a class="wa-link" data-ram="Unlimited" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="payment-section">
-        <h3>Terima Pembayaran via</h3>
-        <div class="payment-images">
-          <img src="https://img1.pixhost.to/images/7094/620357314_skyzopedia.jpg" alt="QRIS">
-          <img src="https://img1.pixhost.to/images/7094/620357253_skyzopedia.jpg" alt="Dana">
-        </div>
-        <p>QRIS ATAU DANA MINTA KE NUXMARKET</p>
       </div>
     </div>
-  </section>
-
-  <script>
-    document.getElementById('showPanelBtn').addEventListener('click', () => {
-      document.getElementById('section1').classList.remove('active');
-      document.getElementById('section2').classList.add('active');
-    });
-
-    document.querySelectorAll('.wa-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const ram = this.getAttribute('data-ram');
-        const message = encodeURIComponent(`min panel ram ${ram.toLowerCase()} harga berapa?`);
-        const waUrl = `https://wa.me/6285166541436?text=${message}`;
-        window.location.href = waUrl;
-      });
-    });
-  </script>
+  </div>
 </body>
 </html>
