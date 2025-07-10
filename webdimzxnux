@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NUXMARKET - Panel Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    section {
+      display: none;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    section.active {
+      display: block;
+    }
+
+    /* SECTION 1 */
+    #section1 header {
+      text-align: center;
+      margin-top: 50px;
+    }
+    #section1 header img {
+      height: 180px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .subtitle {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .main-btn {
+      display: inline-block;
+      background: red;
+      color: #fff;
+      font-weight: 700;
+      font-size: 24px;
+      padding: 20px 40px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: float 2s infinite alternate;
+    }
+    .main-btn:hover {
+      background: darkred;
+      transform: scale(1.05);
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+    .wa-btn-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .wa-btn-top img {
+      height: 18px;
+      margin-right: 8px;
+    }
+    .wa-btn-top:hover {
+      background: #1ebe57;
+      transform: scale(1.05);
+    }
+
+    /* SECTION 2 */
+    #section2 {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      text-align: center;
+    }
+    .panel-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #fff;
+    }
+    .panel-title {
+      font-size: 48px;
+      color: red;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+    .panel-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .panel-col {
+      flex: 1;
+      min-width: 250px;
+    }
+    .panel-item {
+      margin-bottom: 30px;
+    }
+    .panel-item h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .wa-btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      min-width: 220px;
+      transition: all 0.3s ease;
+    }
+    .wa-btn:hover {
+      background: #1ebe57;
+      transform: scale(1.05);
+    }
+    .unlimited {
+      margin-top: 50px;
+    }
+    .payment-section {
+      background: rgba(255, 255, 255, 0.85);
+      color: #000;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+    .payment-section img {
+      height: 100px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    .panel-footer {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 40px;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .panel-title {
+        font-size: 36px;
+      }
+      .panel-item h2 {
+        font-size: 24px;
+      }
+      .wa-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+      }
+      .panel-footer {
+        font-size: 18px;
+      }
+      .main-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+      }
+      .wa-btn-top {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- SECTION 1 -->
+  <section id="section1" class="active">
+    <header>
+      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo NUXMARKET" />
+      <div class="subtitle">
+        Pilih Panel Bot sesuai kebutuhan RAM kamu dan langsung chat admin via WhatsApp untuk tanya harga dan membeli jika minat dijamin murah aman dan terpercaya.
+      </div>
+
+      <a href="#" class="main-btn" onclick="showSection(2)">
+        KLIK UNTUK MELIHAT PANEL 📦 🛒
+      </a>
+
+      <a href="https://wa.me/6285166541436" class="wa-btn-top" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
+        WhatsApp nuxmarket
+      </a>
+    </header>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="section2">
+    <div class="panel-container">
+      <h1 class="panel-title">PANEL RUN BOT</h1>
+      <div class="panel-columns">
+        <!-- Kolom Kiri -->
+        <div class="panel-col">
+          <div class="panel-item">
+            <h2>RAM 1GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%201gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 2GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%202gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 3GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%203gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 4GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%204gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 5GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%205gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+        </div>
+        <!-- Kolom Kanan -->
+        <div class="panel-col">
+          <div class="panel-item">
+            <h2>RAM 6GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%206gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 7GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%207gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 8GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%208gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 9GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%209gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 10GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%2010gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-item unlimited">
+        <h2>RAM Unlimited</h2>
+        <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%20unlimited%20harga%20berapa%3F">(WhatsApp)</a>
+      </div>
+
+      <div class="payment-section">
+        <h3>Terima Pembayaran via:</h3>
+        <img src="https://img1.pixhost.to/images/7094/620357314_skyzopedia.jpg" alt="QRIS" />
+        <img src="https://img1.pixhost.to/images/7094/620357253_skyzopedia.jpg" alt="Dana" />
+        <p>QRIS ATAU DANA MINTA KE NUXMARKET</p>
+      </div>
+
+      <p class="panel-footer">JIKA MAU TANYA HARGA KLIK WhatsApp DIBAWAH RAM YANG KALIAN INGIN TANYAKAN HARGANYA</p>
+    </div>
+  </section>
+
+  <script>
+    function showSection(no) {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById("section" + no).classList.add("active");
+    }
+  </script>
+</body>
+</html>
