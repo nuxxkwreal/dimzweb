@@ -10,255 +10,277 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: #000;
       color: #fff;
       overflow-x: hidden;
-      background: #0f172a;
-    }
-    .video-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    #bgVideo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.4;
     }
     section {
       display: none;
-      padding: 40px 20px;
       min-height: 100vh;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
+      padding: 40px 20px;
     }
     section.active {
       display: block;
-      animation: fadeIn 0.8s ease;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    header {
+
+    /* SECTION 1 */
+    #section1 header {
       text-align: center;
+      margin-top: 50px;
     }
-    header img {
-      height: 220px;
-      border-radius: 16px;
-      margin-bottom: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
+    #section1 header img {
+      height: 180px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    header img:hover {
-      transform: scale(1.05);
-    }
-    .main-text {
+    .subtitle {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
       text-align: center;
       margin-top: 20px;
-      font-size: 28px;
-      color: #ffffff;
-      font-weight: 700;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
-    #showPanelBtn {
-      margin-top: 30px;
-      padding: 14px 32px;
-      font-weight: 700;
-      font-size: 20px;
-      color: #fff;
-      background: linear-gradient(90deg, #3b82f6, #06b6d4);
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      overflow: hidden;
-      position: relative;
+    .main-btn {
       display: inline-block;
+      background: red;
+      color: #fff;
+      font-weight: 700;
+      font-size: 24px;
+      padding: 20px 40px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: float 2s infinite alternate;
+    }
+    .main-btn:hover {
+      background: darkred;
+      transform: scale(1.05);
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+    .wa-btn-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 8px;
       transition: all 0.3s ease;
     }
-    #showPanelBtn span {
-      position: relative;
-      animation: floatText 2s ease-in-out infinite;
-      display: inline-block;
+    .wa-btn-top img {
+      height: 18px;
+      margin-right: 8px;
     }
-    #showPanelBtn:hover {
+    .wa-btn-top:hover {
+      background: #1ebe57;
       transform: scale(1.05);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
-    @keyframes floatText {
-      0% { transform: translateY(0);}
-      50% { transform: translateY(-5px);}
-      100% { transform: translateY(0);}
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .product {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border-radius: 12px;
-      padding: 20px;
+
+    /* SECTION 2 */
+    #section2 {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
     }
-    .product:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.15);
+    .panel-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      color: #fff;
     }
-    .product h2 {
-      margin-bottom: 12px;
-      color: #60a5fa;
+    .panel-title {
+      font-size: 48px;
+      color: red;
+      font-weight: 800;
+      margin-bottom: 40px;
     }
-    .wa-link {
+    .panel-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .panel-col {
+      flex: 1;
+      min-width: 250px;
+    }
+    .panel-item {
+      margin-bottom: 30px;
+    }
+    .panel-item h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .wa-btn {
       display: inline-block;
       background: #25D366;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
-      border: none;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      min-width: 220px;
       transition: all 0.3s ease;
     }
-    .wa-link img {
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-    .wa-link:hover {
-      background-color: #1ebe57;
+    .wa-btn:hover {
+      background: #1ebe57;
       transform: scale(1.05);
     }
+    .unlimited {
+      margin-top: 50px;
+    }
     .payment-section {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.85);
+      color: #000;
       padding: 30px 20px;
       text-align: center;
       border-radius: 10px;
-      margin-top: 30px;
+      margin-top: 50px;
     }
-    .payment-images img {
-      height: 80px;
+    .payment-section img {
+      height: 100px;
       margin: 10px;
       border-radius: 10px;
-      transition: transform 0.3s ease;
     }
-    .payment-images img:hover {
-      transform: scale(1.1);
+    .panel-footer {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 40px;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .panel-title {
+        font-size: 36px;
+      }
+      .panel-item h2 {
+        font-size: 24px;
+      }
+      .wa-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+      }
+      .panel-footer {
+        font-size: 18px;
+      }
+      .main-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+      }
+      .wa-btn-top {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="video-wrapper">
-    <video autoplay muted loop id="bgVideo">
-      <source src="https://files.catbox.moe/ajsfpa.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- SECTION 1 - TAMPILAN UTAMA -->
+  <!-- SECTION 1 -->
   <section id="section1" class="active">
     <header>
-      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo NUXMARKET">
-      <p class="main-text">
+      <img src="https://img1.pixhost.to/images/7090/620287077_skyzopedia.jpg" alt="Logo NUXMARKET" />
+      <div class="subtitle">
         Pilih Panel Bot sesuai kebutuhan RAM kamu dan langsung chat admin via WhatsApp untuk tanya harga dan membeli jika minat dijamin murah aman dan terpercaya.
-      </p>
-      <button id="showPanelBtn"><span>KLIK DISINI UNTUK MELIHAT PANEL📦</span></button>
+      </div>
+
+      <a href="#" class="main-btn" onclick="showSection(2)">
+        KLIK UNTUK MELIHAT PANEL 📦 🛒
+      </a>
+
+      <a href="https://wa.me/6285166541436" class="wa-btn-top" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
+        WhatsApp nuxmarket
+      </a>
     </header>
   </section>
 
-  <!-- SECTION 2 - MENU PANEL -->
+  <!-- SECTION 2 -->
   <section id="section2">
-    <div class="container">
-
-      <div class="product">
-        <h2>Panel Bot RAM 1GB</h2>
-        <a class="wa-link" data-ram="1GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
+    <div class="panel-container">
+      <h1 class="panel-title">PANEL RUN BOT</h1>
+      <div class="panel-columns">
+        <!-- Kolom Kiri -->
+        <div class="panel-col">
+          <div class="panel-item">
+            <h2>RAM 1GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%201gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 2GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%202gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 3GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%203gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 4GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%204gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 5GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%205gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+        </div>
+        <!-- Kolom Kanan -->
+        <div class="panel-col">
+          <div class="panel-item">
+            <h2>RAM 6GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%206gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 7GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%207gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 8GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%208gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 9GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%209gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+          <div class="panel-item">
+            <h2>RAM 10GB</h2>
+            <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%2010gb%20harga%20berapa%3F">(WhatsApp)</a>
+          </div>
+        </div>
       </div>
 
-      <div class="product">
-        <h2>Panel Bot RAM 2GB</h2>
-        <a class="wa-link" data-ram="2GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 3GB</h2>
-        <a class="wa-link" data-ram="3GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 4GB</h2>
-        <a class="wa-link" data-ram="4GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM 5GB</h2>
-        <a class="wa-link" data-ram="5GB" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
-      </div>
-
-      <div class="product">
-        <h2>Panel Bot RAM Unlimited</h2>
-        <a class="wa-link" data-ram="Unlimited" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" />
-          Chat Admin via WhatsApp
-        </a>
+      <div class="panel-item unlimited">
+        <h2>RAM Unlimited</h2>
+        <a class="wa-btn" href="https://wa.me/6285166541436?text=min%20panel%20ram%20unlimited%20harga%20berapa%3F">(WhatsApp)</a>
       </div>
 
       <div class="payment-section">
-        <h3>Terima Pembayaran via</h3>
-        <div class="payment-images">
-          <img src="https://img1.pixhost.to/images/7094/620357314_skyzopedia.jpg" alt="QRIS">
-          <img src="https://img1.pixhost.to/images/7094/620357253_skyzopedia.jpg" alt="Dana">
-        </div>
+        <h3>Terima Pembayaran via:</h3>
+        <img src="https://img1.pixhost.to/images/7094/620357314_skyzopedia.jpg" alt="QRIS" />
+        <img src="https://img1.pixhost.to/images/7094/620357253_skyzopedia.jpg" alt="Dana" />
         <p>QRIS ATAU DANA MINTA KE NUXMARKET</p>
       </div>
+
+      <p class="panel-footer">JIKA MAU TANYA HARGA KLIK WhatsApp DIBAWAH RAM YANG KALIAN INGIN TANYAKAN HARGANYA</p>
     </div>
   </section>
 
   <script>
-    document.getElementById('showPanelBtn').addEventListener('click', () => {
-      document.getElementById('section1').classList.remove('active');
-      document.getElementById('section2').classList.add('active');
-    });
-
-    document.querySelectorAll('.wa-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const ram = this.getAttribute('data-ram');
-        const message = encodeURIComponent(`min panel ram ${ram.toLowerCase()} harga berapa?`);
-        const waUrl = `https://wa.me/6285166541436?text=${message}`;
-        window.location.href = waUrl;
-      });
-    });
+    function showSection(no) {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      document.getElementById("section" + no).classList.add("active");
+    }
   </script>
 </body>
 </html>
